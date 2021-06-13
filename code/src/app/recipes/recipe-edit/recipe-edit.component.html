@@ -1,0 +1,315 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="BugForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="!BugForm.valid"
+          >
+            Save
+          </button>
+          <button type="button" class="btn btn-danger" (click)="onCancel()">
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              class="form-control"
+              style="background-color: #343434; color: white"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="imagePath">Image URL :</label>
+            <p>PLease use <em><a style="color:palevioletred" href="https://postimages.org/">This website</a></em> to upload your images and use direct links only</p>
+            <input
+              type="text"
+              id="imagePath"
+              formControlName="imagePath"
+              class="form-control"
+              style="background-color: #343434; color: white"
+              #imagePath
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img
+            crossOrigin="anonymous"
+            [src]="imagePath.value"
+            class="img-responsive"
+            style="height: 250px"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              type="text"
+              id="description"
+              class="form-control"
+              formControlName="description"
+              rows="4"
+              cols="50"
+              style="background-color: #343434; color: white"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group radio">
+            <p>Please select Bug Type:</p>
+
+            <label>
+              <input
+                style="
+                  opacity: 0;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: -1;
+                "
+                type="radio"
+                id="bug"
+                name="type"
+                value="bug"
+                formControlName="type"
+              />
+              <span class="design"></span>
+              <span class="text">bug</span>
+            </label>
+
+            <label>
+              <input
+                style="
+                  opacity: 0;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: -1;
+                "
+                type="radio"
+                id="exploit"
+                name="type"
+                value="exploit"
+                formControlName="type"
+              />
+              <span class="design"></span>
+              <span class="text">exploit</span>
+            </label>
+            <label>
+              <input
+                style="
+                  opacity: 0;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: -1;
+                "
+                type="radio"
+                id="other"
+                name="type"
+                value="other"
+                formControlName="type"
+              />
+              <span class="design"></span>
+              <span class="text">other</span>
+            </label>
+          </div>
+
+          <div class="form-group radio">
+            <p>Please select Bug Status:</p>
+            <label>
+              <input
+                style="
+                  opacity: 0;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: -1;
+                "
+                type="radio"
+                id="open"
+                name="status"
+                value="open"
+                formControlName="status"
+              />
+              <span class="design"></span>
+              <span class="text">open</span>
+            </label>
+
+            <label>
+              <input
+                style="
+                  opacity: 0;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: -1;
+                "
+                type="radio"
+                id="ongoing"
+                name="status"
+                value="ongoing"
+                formControlName="status"
+              />
+              <span class="design"></span>
+              <span class="text">ongoing</span>
+            </label>
+
+            <label>
+              <input
+                style="
+                  opacity: 0;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: -1;
+                "
+                type="radio"
+                id="closed"
+                name="status"
+                value="closed"
+                formControlName="status"
+              />
+              <span class="design"></span>
+              <span class="text">closed</span>
+            </label>
+          </div>
+
+          <div class="form-group radio">
+            <p>Please select Bug Priority:</p>
+            <label>
+              <input
+                style="
+                  opacity: 0;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: -1;
+                "
+                type="radio"
+                id="low"
+                name="priority"
+                value="low"
+                formControlName="priority"
+              />
+              <span class="design"></span>
+              <span class="text">low </span>
+            </label>
+
+            <label>
+              <input
+                style="
+                  opacity: 0;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: -1;
+                "
+                type="radio"
+                id="medium"
+                name="priority"
+                value="medium"
+                formControlName="priority"
+              />
+              <span class="design"></span>
+              <span class="text">medium</span>
+            </label>
+
+            <label>
+              <input
+                style="
+                  opacity: 0;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: -1;
+                "
+                type="radio"
+                id="high"
+                name="priority"
+                value="high"
+                formControlName="priority"
+              />
+              <span class="design"></span>
+              <span class="text">high</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- ingredients might wana remove -->
+      <div class="row">
+        <div class="col-xs-12" formArrayName="ingredients">
+          <div
+            class="row"
+            style="margin-top: 10px"
+            *ngFor="let ingredientCtrl of getControls(); let i = index"
+            [formGroupName]="i"
+            style="margin-top: 10px"
+          >
+            <div class="col-xs-8">
+              <input type="text" class="form-control" formControlName="name" />
+            </div>
+            <div class="col-xs-2">
+              <input
+                type="number"
+                class="form-control"
+                formControlName="amount"
+              />
+            </div>
+
+            <div class="col-xs-2">
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="onDeleteIng(i)"
+              >
+                X
+              </button>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-xs-12">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                (click)="onAddIngredient()"
+              >
+                Add task
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

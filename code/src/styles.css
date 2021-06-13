@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+body {
+  min-height: 100vh; 
+  /* background-color: #1B3B4F; */
+  background-color:#1b1b1b;
+  color:papayawhip;
+  font-family: 'Ubuntu', sans-serif;
+  clear: both;
+  margin-bottom: 310px;
+}
+
+
+.list-group-item{
+  color:black;
+}
+footer {
+    clear: both;
+    position: relative;
+    height: 290px;
+    margin-top: -200px;
+}

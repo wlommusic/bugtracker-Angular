@@ -1,0 +1,76 @@
+<ng-template appPlaceholder></ng-template>
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <h2 class="col-xs-12">{{ isloginMode ? "Login" : "Sign up" }} Page</h2>
+    <hr />
+    <!-- <div class="alert alert-danger alertmessage" *ngIf="error">
+      <p>{{error}}</p>
+    </div> -->
+    <!-- <app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert> -->
+
+    <div *ngIf="isLoading" style="text-align: center">
+      <apploading></apploading>
+    </div>
+    <form #authform="ngForm" (ngSubmit)="onsubmit(authform)" *ngIf="!isLoading">
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+        <div class="input-group"></div>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          ngModel
+          name="email"
+          required
+          email
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input-group">
+          <input
+            [type]="texttype ? 'text' : 'password'"
+            id="password"
+            class="form-control"
+            ngModel
+            name="password"
+            required
+            minlength="8"
+          />
+
+          <div class="input-group-append">
+            <span class="input-group-text">
+              <i
+                class="fa"
+                [ngClass]="{
+                  'fa-eye-slash': !texttype,
+                  'fa-eye': texttype
+                }"
+                (click)="onSwitchTextType()"
+              ></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button
+          type="submit"
+          class="btn btn-dark btn-outline-secondary"
+          [disabled]="!authform.valid"
+        >
+          {{ isloginMode ? "Login" : "Sign up" }}
+        </button>
+        |
+        <button
+          type="button"
+          class="btn btn-dark btn-outline-secondary"
+          (click)="onSwitchMode()"
+        >
+          switch to:
+          {{ isloginMode ? "Sign up" : "Login" }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

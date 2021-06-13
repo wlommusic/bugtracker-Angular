@@ -1,0 +1,20 @@
+.info-box{
+display: inline-block;
+line-height: 0.7em;
+border-top-left-radius: 20px;
+border-bottom-right-radius: 20px;
+
+}
+
+/* .bugitem{
+    background: #001f3f; color: white;margin-bottom:10px;
+    border-radius:5px 25px 5px;
+} */
+
+.bugitem{
+    background: #7678ed; color: white;margin-bottom:10px;
+    border-radius:5px 25px 5px;
+}
+a:active {
+  background-color:chocolate;
+}

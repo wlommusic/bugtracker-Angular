@@ -1,0 +1,54 @@
+<a
+  class="list-group-item clearfix bugitem"
+  style="cursor: pointer"
+  [routerLink]="[index]"
+  routerLinkActive="active"
+>
+  <div class="float-left">
+    <h4
+      class="list-group-item-heading; hovering"
+      style="
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 120px;
+      "
+    >
+      <strong>{{ recipe.name }}</strong>
+    </h4>
+    <p
+      class="list-group-item-text hovering"
+      style="
+        width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      "
+    >
+      <em>{{ recipe.description }}</em>
+    </p>
+    <span
+      class="list-group-item list-group-item-info float-left info-box"
+      style="margin-right: 5px; color: #3333ff"
+      >{{ recipe.type | uppercase }}</span
+    >
+    <span
+      class="list-group-item list-group-item-warning float-right info-box"
+      style="margin-right: 5px; color: darkviolet"
+      >{{ recipe.status | uppercase }}</span
+    >
+    <span
+      class="list-group-item list-group-item-danger float-right info-box"
+      style="margin-right: 5px; color: #ff0000"
+      >{{ recipe.priority | uppercase }}</span
+    >
+  </div>
+  <span class="float-right">
+    <img
+      [src]="recipe.imagePath"
+      alt="{{ recipe.name }}"
+      class="img-responsive"
+      style="width: 50px"
+    />
+  </span>
+</a>

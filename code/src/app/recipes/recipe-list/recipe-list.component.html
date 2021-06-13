@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn draw-border" (click)="onNewRecipe()">New Ticket</button>
+  </div>
+</div>
+
+<div style="margin-top: 10px">
+  <div class="form-inline md-form form-sm mt-0 active-cyan active-cyan-2 ml-3">
+    <i class="fa fa-search fa-2x text-primary" aria-hidden="true"></i
+    ><input
+      class="form-control form-control-sm ml-3 w-75"
+      type="text"
+      placeholder="Sort by Status ..."
+      aria-label="search"
+      [(ngModel)]="filterStatus"
+    />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <app-recipe-item
+      *ngFor="
+        let recipeEl of recipes | Filter: filterStatus:'status';
+        let i = index
+      "
+      [recipe]="recipeEl"
+      [index]="i"
+    >
+    </app-recipe-item>
+  </div>
+</div>
