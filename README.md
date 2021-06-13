@@ -1,3 +1,4 @@
 # bugtracker
 
-https://bugtrackerangular.netlify.app/auth
+https://bugtrackerangular.netlify.app/
+
