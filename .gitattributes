@@ -1,8 +1,8 @@
 
-*.js linguist-vendored=false
+*.ts linguist-vendored=true
 *.min.css linguist-vendored=false
 *.min.js linguist-vendored=false
 *.css linguist-detectable=false
-*.html linguist-detectable=true
+*.html linguist-detectable=false
 *.js linguist-detectable=true
 
