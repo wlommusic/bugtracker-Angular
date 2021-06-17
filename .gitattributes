@@ -3,6 +3,6 @@
 *.min.css linguist-vendored=false
 *.min.js linguist-vendored=false
 *.css linguist-detectable=false
-*.html linguist-detectable=true
-*.js linguist-detectable=true
+*.html linguist-detectable=false
+*.ts linguist-detectable=true
 
